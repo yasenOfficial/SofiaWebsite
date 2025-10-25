@@ -23,82 +23,92 @@
 
     <!-- Header -->
     <header class="bg-primary text-white text-center py-3 shadow-sm">
-        <h1 class="h4 mb-0"><i class="fas fa-landmark me-2"></i>Sofia Virtual Heritage Walk</h1>
+        <h1 class="h4 mb-0"><i class="fas fa-landmark me-2"></i>Sofia Virtual Tour</h1>
     </header>
 
     <!-- Main container -->
-<main class="flex-grow-1 position-relative">
-    <div class="container-fluid p-0 h-100">
-        <div id="map" class="w-100 h-100"></div>
+    <main class="flex-grow-1 position-relative">
+        <div class="container-fluid p-0 h-100">
+            <div id="map" class="w-100 h-100"></div>
 
-        <!-- Carousel -->
-        <div id="carouselContainer" class="position-absolute top-0 start-0 w-100 h-100 d-none overlay-ui">
-            <div id="landmarkCarousel" class="carousel slide h-100" data-bs-ride="carousel">
-                <div class="carousel-inner h-100" id="carouselInner"></div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#landmarkCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#landmarkCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <!-- Carousel -->
+            <div id="carouselContainer" class="position-absolute top-0 start-0 w-100 h-100 d-none overlay-ui">
+                <div id="landmarkCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100" id="carouselInner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#landmarkCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#landmarkCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
+
+            <!-- Street View iframe -->
+            <iframe id="streetview" allowfullscreen
+                class="position-absolute top-0 start-0 w-100 h-100 d-none border-0"></iframe>
         </div>
 
-        <!-- Street View iframe -->
-        <iframe id="streetview" allowfullscreen
-            class="position-absolute top-0 start-0 w-100 h-100 d-none border-0"></iframe>
-    </div>
-
-    <!-- Landmark list -->
-    <div id="landmarkList" class="card position-absolute top-0 end-0 m-3 shadow-lg d-none overlay-ui">
-        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-            <span><i class="fas fa-map-marker-alt me-1"></i>Landmarks</span>
-            <button id="closeListBtn" class="btn btn-sm btn-light"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="card-body p-2" id="landmarkItems"></div>
-    </div>
-
-    <button id="toggleListBtn"
-        class="btn btn-light rounded-circle shadow position-absolute top-0 end-0 m-3 overlay-ui">
-        <i class="fas fa-list text-primary"></i>
+        <!-- Welcome Slide -->
+<div id="welcomeSlide" class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center overlay-ui bg-light">
+    <h1 class="text-primary mb-3 text-center">Welcome to Sofia Virtual Tour</h1>
+    <p class="text-center mb-4">Explore Sofia's landmarks and historic sites. Click below to start your tour!</p>
+    <button class="btn btn-primary btn-lg" id="startTourBtnHero">
+        <i class="fas fa-play me-1"></i>Start Tour
     </button>
+</div>
 
-    <!-- Info card -->
-    <div id="info"
-        class="card overlay-ui position-absolute bottom-0 start-50 translate-middle-x mb-3 shadow-lg w-75 w-md-50">
-        <div class="card-body">
-            <h5 class="card-title mb-2" id="infoTitle">Баните</h5>
-            <p class="card-text text-muted" id="infoDesc">Historic public baths built during Ottoman period.</p>
 
-            <div class="progress mb-3" style="height: 6px;">
-                <div class="progress-bar" id="progressFill" role="progressbar" style="width: 41.6667%;"></div>
+        <!-- Landmark list -->
+        <div id="landmarkList" class="card position-absolute top-0 end-0 m-3 shadow-lg d-none overlay-ui">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <span><i class="fas fa-map-marker-alt me-1"></i>Landmarks</span>
+                <button id="closeListBtn" class="btn btn-sm btn-light"><i class="fas fa-times"></i></button>
             </div>
+            <div class="card-body p-2" id="landmarkItems"></div>
+        </div>
 
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge bg-light text-primary border" id="landmarkCounter">5 / 12</span>
-                <button class="btn btn-primary btn-sm d-none" id="startTourBtn">
-                    <i class="fas fa-play me-1"></i>Start Tour
-                </button>
-                <button class="btn btn-outline-primary btn-sm" id="prevBtn">
-                    <i class="fas fa-arrow-left me-1"></i>Prev
-                </button>
-                <button class="btn btn-outline-primary btn-sm" id="nextBtn">
-                    Next<i class="fas fa-arrow-right ms-1"></i>
-                </button>
-                <button class="btn btn-outline-secondary btn-sm" id="backToMapBtn">
-                    <i class="fas fa-map me-1"></i>Map
-                </button>
-                <button class="btn btn-outline-success btn-sm d-none" id="toggleStreetViewBtn">
-                    <i class="fas fa-street-view me-1"></i>View Street
-                </button>
+        <button id="toggleListBtn"
+            class="btn btn-light rounded-circle shadow position-absolute top-0 end-0 m-3 overlay-ui">
+            <i class="fas fa-list text-primary"></i>
+        </button>
+
+        <div id="info"
+            class="card overlay-ui position-absolute bottom-0 start-50 translate-middle-x mb-3 shadow-lg w-75 w-md-50">
+            <div class="card-body">
+                <h5 class="card-title mb-2" id="infoTitle"></h5> <!-- empty initially -->
+                <p class="card-text text-muted" id="infoDesc"></p> <!-- empty initially -->
+
+                <div class="progress mb-3" style="height: 6px;">
+                    <div class="progress-bar" id="progressFill" role="progressbar" style="width: 0%;"></div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-primary border" id="landmarkCounter">0 / 12</span>
+                    <!-- <button class="btn btn-primary btn-sm" id="startTourBtn">
+                        <i class="fas fa-play me-1"></i>Start Tour
+                    </button> -->
+                    <button class="btn btn-outline-primary btn-sm d-none" id="prevBtn">
+                        <i class="fas fa-arrow-left me-1"></i>Prev
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm d-none" id="nextBtn">
+                        Next<i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                    <!-- <button class="btn btn-outline-secondary btn-sm d-none" id="backToMapBtn">
+                        <i class="fas fa-map me-1"></i>Map
+                    </button> -->
+                    <button class="btn btn-outline-success btn-sm d-none" id="toggleStreetViewBtn">
+                        <i class="fas fa-street-view me-1"></i>View Street
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+
+    </main>
 
 
     <!-- Bootstrap JS -->

@@ -134,3 +134,10 @@ body {
   pointer-events: auto;
   background: transparent;
 }
+
+#welcomeSlide {
+    z-index: 1050; /* above map but below info card if needed */
+    background: rgba(255, 255, 255, 0.95); /* light transparent overlay */
+    text-align: center;
+    padding: 2rem;
+}
