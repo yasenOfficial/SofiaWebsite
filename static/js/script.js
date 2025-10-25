@@ -80,18 +80,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function populateCarousel(lm) {
-        carouselInner.innerHTML = "";
-        lm.images.forEach((src, idx) => {
-            const itemDiv = document.createElement("div");
-            itemDiv.className = "carousel-item" + (idx === 0 ? " active" : "");
-            const img = document.createElement("img");
-            img.src = src;
-            img.className = "d-block w-100 h-100";
-            img.style.objectFit = "cover";
-            itemDiv.appendChild(img);
-            carouselInner.appendChild(itemDiv);
-        });
-    }
+    carouselInner.innerHTML = "";
+
+    // Detect device: mobile if width <= 768px
+    const isMobile = window.innerWidth <= 768;
+
+    // pick correct array from dictionary
+    const images = isMobile ? lm.images.mobile : lm.images.desktop;
+
+    // now images is an array → can use forEach
+    images.forEach((src, idx) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "carousel-item" + (idx === 0 ? " active" : "");
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "d-block w-100 h-100";
+        img.style.objectFit = "cover";
+        itemDiv.appendChild(img);
+        carouselInner.appendChild(itemDiv);
+    });
+}
+
+
 
     function showLandmark() {
         if (currentIndex < 0) return;

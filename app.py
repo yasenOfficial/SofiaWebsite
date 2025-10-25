@@ -16,10 +16,16 @@ def landmarks_json():
             "icon": "ndk",
             "description": "The largest congress center in Southeastern Europe.",
             "embed": "https://www.google.com/maps/embed?pb=!4v1761420472287!6m8!1m7!1sj3iWNwGVh1lK-D_rmzN_Tg!2m2!1d42.68558061228042!2d23.31909332659416!3f184.40564082458874!4f14.046655125766307!5f0.7820865974627469", 
-            "images": [
-                url_for('static', filename='images/NDK1.jpg'),
-                url_for('static', filename='images/NDK2.jpg'),
+            "images": {
+            "desktop": [
+                url_for('static', filename='images/NDK1_desktop.jpg'),
+                url_for('static', filename='images/NDK2_desktop.jpg')
+            ],
+            "mobile": [
+                url_for('static', filename='images/NDK1_mobile.jpg'),
+                url_for('static', filename='images/NDK2_mobile.jpg')
             ]
+        }
         },
         {
             "name": "Vitoshka Street",
@@ -28,10 +34,16 @@ def landmarks_json():
             "icon": "vitoshka",
             "description": "Popular pedestrian street for shopping and cafes.",
             "embed": "https://www.google.com/maps/embed?pb=!4v1761420761623!6m8!1m7!1sCAoSHENJQUJJaEFHYnlmUUZTcE5rR2dJOHVVQUEydlA.!2m2!1d42.68585659484076!2d23.31786986225877!3f9.912647504390153!4f1.3735683057407186!5f0.7820865974627469", 
-            "images": [
-                url_for('static', filename='images/Vitoshka1.jpg'),
-                url_for('static', filename='images/Vitoshka2.jpg'),
+             "images": {
+            "desktop": [
+                url_for('static', filename='images/NDK1_desktop.jpg'),
+                url_for('static', filename='images/NDK2_desktop.jpg')
+            ],
+            "mobile": [
+                url_for('static', filename='images/NDK1_mobile.jpg'),
+                url_for('static', filename='images/NDK2_mobile.jpg')
             ]
+        }
         },
         {
             "name": "Serdica",
