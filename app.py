@@ -127,12 +127,12 @@ def landmarks_json():
             "embed": "https://www.google.com/maps/embed?pb=!4v1761422676315!6m8!1m7!1sBq3Bfbah4G25KRxBb0JX1A!2m2!1d42.69493490404459!2d23.3351281624944!3f101.12371130448588!4f11.923715997429!5f0.7820865974627469",
             "images": {
             "desktop": [
-                url_for('static', filename='images/Library1_desktop.jpg'),
-                url_for('static', filename='images/Library2_desktop.jpg')
+                url_for('static', filename='images/Library/Library1_desktop.jpg'),
+                url_for('static', filename='images/Library/Library2_desktop.jpg')
             ],
             "mobile": [
-                url_for('static', filename='images/Library1_mobile.jpg'),
-                url_for('static', filename='images/Library2_mobile.jpg')
+                url_for('static', filename='images/Library/Library1_mobile.jpg'),
+                url_for('static', filename='images/Library/Library2_mobile.jpg')
             ]
         }
         },
@@ -145,12 +145,12 @@ def landmarks_json():
             "embed": "https://www.google.com/maps/embed?pb=!4v1761422814458!6m8!1m7!1sSiFachJCRu9vMwC2YV_Fdw!2m2!1d42.69326878876129!2d23.33445688678462!3f41.41189793672286!4f17.67284225494612!5f0.7820865974627469",
             "images": {
             "desktop": [
-                url_for('static', filename='images/University1_desktop.jpg'),
-                url_for('static', filename='images/University2_desktop.jpg')
+                url_for('static', filename='images/University/University1_desktop.jpg'),
+                url_for('static', filename='images/University/University2_desktop.jpg')
             ],
             "mobile": [
-                url_for('static', filename='images/University1_mobile.jpg'),
-                url_for('static', filename='images/University2_mobile.jpg')
+                url_for('static', filename='images/University/University1_mobile.jpg'),
+                url_for('static', filename='images/University/University2_mobile.jpg')
             ]
         }
         },
@@ -163,12 +163,12 @@ def landmarks_json():
             "embed": "https://www.google.com/maps/embed?pb=!4v1698031900000!6m8!1m7!1sCAoSLEFGMVFpcE1Ud2dKX0pKZkpYZ3JHaDFiV0l0bXNRNGpIY1RVTU1hY1R6!2m2!1d42.6975!2d23.3234!3f0!4f0!5f0.7820865974627469",
             "images": {
             "desktop": [
-                url_for('static', filename='images/TechPark1_desktop.jpg'),
-                url_for('static', filename='images/TechPark2_desktop.jpg')
+                url_for('static', filename='images/TechPark/TechPark1_desktop.jpg'),
+                url_for('static', filename='images/TechPark/TechPark2_desktop.jpg')
             ],
             "mobile": [
-                url_for('static', filename='images/TechPark1_mobile.jpg'),
-                url_for('static', filename='images/TechPark2_mobile.jpg')
+                url_for('static', filename='images/TechPark/TechPark1_mobile.jpg'),
+                url_for('static', filename='images/TechPark/TechPark2_mobile.jpg')
             ]
         }
         },
@@ -181,12 +181,12 @@ def landmarks_json():
             "embed": "https://www.google.com/maps/embed?pb=!4v1761423158243!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQ0U2UERpNkFF!2m2!1d42.61900335917532!2d23.37924055644428!3f5.851964161764994!4f28.112149439637975!5f0.7820865974627469",
             "images": {
             "desktop": [
-                url_for('static', filename='images/BellTowers1_desktop.jpg'),
-                url_for('static', filename='images/BellTowers2_desktop.jpg')
+                url_for('static', filename='images/Bells/Bells1_desktop.jpg'),
+                url_for('static', filename='images/Bells/Bells2_desktop.jpg')
             ],
             "mobile": [
-                url_for('static', filename='images/BellTowers1_mobile.jpg'),
-                url_for('static', filename='images/BellTowers2_mobile.jpg')
+                url_for('static', filename='images/Bells/Bells1_mobile.jpg'),
+                url_for('static', filename='images/Bells/Bells2_mobile.jpg')
             ]
         }
         },
@@ -199,12 +199,12 @@ def landmarks_json():
             "embed": "https://www.google.com/maps/embed?pb=!4v1761423372457!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRDQxSnJ4Y1E.!2m2!1d42.64422410880445!2d23.26516509306921!3f96.1638764558055!4f24.506437611665334!5f0.7820865974627469",
             "images": {
             "desktop": [
-                url_for('static', filename='images/Boyana1_desktop.jpg'),
-                url_for('static', filename='images/Boyana2_desktop.jpg')
+                url_for('static', filename='images/Boyana/Boyana1_desktop.jpg'),
+                url_for('static', filename='images/Boyana/Boyana2_desktop.jpg')
             ],
             "mobile": [
-                url_for('static', filename='images/Boyana1_mobile.jpg'),
-                url_for('static', filename='images/Boyana2_mobile.jpg')
+                url_for('static', filename='images/Boyana/Boyana1_mobile.jpg'),
+                url_for('static', filename='images/Boyana/Boyana2_mobile.jpg')
             ]
         }
         },
@@ -217,12 +217,12 @@ def landmarks_json():
             "embed": "https://www.google.com/maps/embed?pb=!4v1761423442401!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJQzJfSlNENHdF!2m2!1d42.63737392390021!2d23.24320158154441!3f214.79058749458704!4f-6.696068493478521!5f0.7820865974627469",
             "images": {
             "desktop": [
-                url_for('static', filename='images/Kopito1_desktop.jpg'),
-                url_for('static', filename='images/Kopito2_desktop.jpg')
+                url_for('static', filename='images/Kopitoto/Kopitoto1_desktop.jpg'),
+                url_for('static', filename='images/Kopitoto/Kopitoto2_desktop.jpg')
             ],
             "mobile": [
-                url_for('static', filename='images/Kopito1_mobile.jpg'),
-                url_for('static', filename='images/Kopito2_mobile.jpg')
+                url_for('static', filename='images/Kopitoto/Kopitoto1_mobile.jpg'),
+                url_for('static', filename='images/Kopitoto/Kopitoto2_mobile.jpg')
             ]
         }
         }

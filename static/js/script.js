@@ -26,6 +26,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     const toggleStreetViewBtn = document.getElementById("toggleStreetViewBtn");
     const heroBtn = document.getElementById('startTourBtnHero');
 
+
+    // Add bottom margin on mobile to avoid Safari UI
+    function adjustStreetViewBtnMargin() {
+        if (!toggleStreetViewBtn) return;
+        if (window.innerWidth <= 768) {
+            toggleStreetViewBtn.classList.add('mb-5');
+        } else {
+            toggleStreetViewBtn.classList.remove('mb-5');
+        }
+    }
+
+    // Call it on load
+    adjustStreetViewBtnMargin();
+
+    // Call it on resize
+    window.addEventListener('resize', adjustStreetViewBtnMargin);
+
+
     // ==========================
     // 3️⃣ Initialize map
     // ==========================
@@ -80,26 +98,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function populateCarousel(lm) {
-    carouselInner.innerHTML = "";
+        carouselInner.innerHTML = "";
 
-    // Detect device: mobile if width <= 768px
-    const isMobile = window.innerWidth <= 768;
+        // Detect device: mobile if width <= 768px
+        const isMobile = window.innerWidth <= 768;
 
-    // pick correct array from dictionary
-    const images = isMobile ? lm.images.mobile : lm.images.desktop;
+        // pick correct array from dictionary
+        const images = isMobile ? lm.images.mobile : lm.images.desktop;
 
-    // now images is an array → can use forEach
-    images.forEach((src, idx) => {
-        const itemDiv = document.createElement("div");
-        itemDiv.className = "carousel-item" + (idx === 0 ? " active" : "");
-        const img = document.createElement("img");
-        img.src = src;
-        img.className = "d-block w-100 h-100";
-        img.style.objectFit = "cover";
-        itemDiv.appendChild(img);
-        carouselInner.appendChild(itemDiv);
-    });
-}
+        // now images is an array → can use forEach
+        images.forEach((src, idx) => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "carousel-item" + (idx === 0 ? " active" : "");
+            const img = document.createElement("img");
+            img.src = src;
+            img.className = "d-block w-100 h-100";
+            img.style.objectFit = "cover";
+            itemDiv.appendChild(img);
+            carouselInner.appendChild(itemDiv);
+        });
+    }
 
 
 
