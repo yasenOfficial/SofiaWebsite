@@ -236,6 +236,8 @@ function updateProgress() {
         if (streetViewOpen) {
             sv.src = lm.embed;
             sv.classList.remove("d-none");
+            sv.style.pointerEvents = streetViewOpen ? "auto" : "none";
+
             carouselContainer.classList.add("d-none");
             toggleStreetViewBtn.innerHTML = `<i class="fas fa-street-view me-1"></i>Close Street`;
         } else {
@@ -265,6 +267,7 @@ function updateProgress() {
         streetViewOpen = false; // reset Street View state
         carouselContainer.classList.add("d-none");
         sv.classList.add("d-none");
+        sv.style.pointerEvents = "none";
         map.getContainer().classList.remove("d-none");
         toggleStreetViewBtn.classList.add("d-none");
 

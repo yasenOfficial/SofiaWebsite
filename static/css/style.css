@@ -28,3 +28,58 @@ body {
   background-color: rgba(102, 126, 234, 0.15);
   color: #667eea;
 }
+
+/* Make sure carousel controls are above everything */
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 1050; /* higher than iframe/street view */
+}
+
+/* Optional: if iframe blocks clicks, reduce its pointer-events when carousel is visible */
+#streetview.d-none {
+    pointer-events: none;
+}
+
+#streetview:not(.d-none) {
+    pointer-events: auto;
+}
+
+
+.controls-container {
+    position: absolute; /* above the iframe */
+    top: 10px;
+    left: 10px;
+    z-index: 2000; /* higher than iframe and carousel */
+    display: flex;
+    gap: 5px;
+}
+
+#nextBtn, #prevBtn, #backToMapBtn, #startTourBtn, #toggleStreetViewBtn {
+    pointer-events: auto; /* ensure buttons receive clicks */
+}
+
+
+/* --- Overlay + z-index handling --- */
+#streetview {
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.overlay-ui {
+  position: relative;
+  z-index: 1001;
+  pointer-events: auto;
+}
+
+/* Make sure cards, buttons, overlays are above everything else */
+#info,
+#toggleListBtn,
+#landmarkList,
+#carouselContainer {
+  z-index: 1001;
+}
+
+/* Ensure map always stays at the base */
+#map {
+  z-index: 1;
+}
