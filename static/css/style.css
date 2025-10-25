@@ -58,28 +58,79 @@ body {
     pointer-events: auto; /* ensure buttons receive clicks */
 }
 
+/* Ensure map stays at base */
+#map {
+  z-index: 1;
+}
 
-/* --- Overlay + z-index handling --- */
+
+/* Carousel container */
+#carouselContainer {
+  z-index: 101;
+}
+
+/* Landmark list and toggle button */
+#landmarkList, #toggleListBtn {
+  z-index: 2000;
+}
+
+/* Controls inside info card */
+#infoControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+
+/* Only enable pointer events when hovering over the iframe area, not the buttons */
+#streetview:hover {
+  pointer-events: auto;
+}
+
+
+/* Make sure all controls have proper pointer events */
+#info button {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
+
+
 #streetview {
   z-index: 100;
   pointer-events: auto;
 }
 
-.overlay-ui {
+/* Info card must be above Street View */
+#info {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2001 !important;
+  pointer-events: auto !important;
+  width: 75%;
+  max-width: 500px;
+  background: white; /* Ensure solid background */
+}
+
+/* Ensure all buttons and content in info card capture clicks */
+#info * {
+  pointer-events: auto !important;
   position: relative;
-  z-index: 1001;
-  pointer-events: auto;
-}
-
-/* Make sure cards, buttons, overlays are above everything else */
-#info,
-#toggleListBtn,
-#landmarkList,
-#carouselContainer {
-  z-index: 1001;
-}
-
-/* Ensure map always stays at the base */
-#map {
   z-index: 1;
+}
+
+/* Create a protective invisible area around the info card */
+#info::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  pointer-events: auto;
+  background: transparent;
 }
